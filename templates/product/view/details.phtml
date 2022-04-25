@@ -4,8 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-// @codingStandardsIgnoreFile 
-/*
+// @codingStandardsIgnoreFile
 $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
 $_alobHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
 ?>
@@ -29,18 +28,18 @@ $_alobHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
                     $label = $block->getChildData($alias, 'title');
                 ?>
                 <div class="data item title"
-                     aria-labeledby="tab-label-<?php  echo $alias;?>-title"
-                     data-role="collapsible" id="tab-label-<?php  echo $alias;?>">
+                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title"
+                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>">
                     <a class="data switch"
                        tabindex="-1"
                        data-toggle="switch"
-                       href="#<?php  echo $alias; ?>"
-                       id="tab-label-<?php  echo $alias;?>-title">
-                        <?php  echo $label; ?>
+                       href="#<?php /* @escapeNotVerified */ echo $alias; ?>"
+                       id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title">
+                        <?php /* @escapeNotVerified */ echo $label; ?>
                     </a>
                 </div>
-                <!-- <div class="data item content" id="<?php  ?>" data-role="content">
-                    <?php  ?>
+                <!-- <div class="data item content" id="<?php /* @escapeNotVerified  echo $alias; */ ?>" data-role="content">
+                    <?php /* @escapeNotVerified echo $html; */ ?>
                 </div> -->
 
                 <?php $content .= '<div class="data item content" id="'.$alias.'" data-role="content">'.$html.'</div>' ?>
@@ -58,14 +57,14 @@ $_alobHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
                     $label = $tab['title'];
                 ?>
                 <div class="data item title"
-                     aria-labeledby="tab-label-<?php  echo $alias;?>-title"
-                     data-role="collapsible" id="tab-label-<?php  echo $alias;?>">
+                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title"
+                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>">
                     <a class="data switch"
                        tabindex="-1"
                        data-toggle="switch"
-                       href="#<?php  echo $alias; ?>"
-                       id="tab-label-<?php  echo $alias;?>-title">
-                        <?php  echo $label; ?>
+                       href="#<?php /* @escapeNotVerified */ echo $alias; ?>"
+                       id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title">
+                        <?php /* @escapeNotVerified */ echo $label; ?>
                     </a>
                 </div>
                 <?php $content .= '<div class="data item content" id="'.$alias.'" data-role="content">'.$html.'</div>' ?>
@@ -100,14 +99,14 @@ $_alobHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
                     $label = $tab['title'];
                 ?>
                 <div class="data item title"
-                     aria-labeledby="tab-label-<?php  echo $alias;?>-title"
-                     data-role="collapsible" id="tab-label-<?php  echo $alias;?>">
+                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title"
+                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>">
                     <a class="data switch"
                        tabindex="-1"
                        data-toggle="switch"
-                       href="#<?php  echo $alias; ?>"
-                       id="tab-label-<?php echo $alias;?>-title">
-                        <?php  echo $label; ?>
+                       href="#<?php /* @escapeNotVerified */ echo $alias; ?>"
+                       id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title">
+                        <?php /* @escapeNotVerified */ echo $label; ?>
                     </a>
                 </div>
                 <?php $content .= '<div class="data item content" id="'.$alias.'" data-role="content">'.$html.'</div>' ?>
@@ -118,4 +117,4 @@ $_alobHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
             </div>    
         </div>
     </div>
-<?php endif; */ ?>
+<?php endif; ?>

@@ -16,144 +16,29 @@
 <!--    <a class="delivery-return-text"><?php echo __('Delivery & Return') ?></a>-->
     <div id="delivery-return-popup" style="display: none;"><?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('delivery_and_return')->toHtml();?></div>
 </div>
-<?php $slash2 = '//'; /* ?>
-<div class="alo-social-links socials clearfix addit">
+<?php $slash2 = '//'; ?>
+<!--<div class="alo-social-links socials clearfix addit">
     <div class="custom-html">
-        <h3 class="title-social"><?php  echo __('Share it:') ?></h3>
+        <h3 class="title-social"><?php /* @escapeNotVerified */ echo __('Share it:') ?></h3>
         <ul class="icon-share list-inline">
             <li class="facebook">
-                <a class="trasition-all social-link facebook" title="<?php echo __('Share on Facebook') ?>" href="#" target="_blank" rel="nofollow" onclick="window.open('<?php echo $slash2 ?>www.facebook.com/sharer/sharer.php?u='+'<?php echo $_product->getProductUrl();?>&picture=<?php echo $_product->getImageUrl();?>');return false;"><em class="fa fa-facebook"><span class="hidden"><?php  echo __('facebook') ?></span></em>
+                <a class="trasition-all social-link facebook" title="<?php echo __('Share on Facebook') ?>" href="#" target="_blank" rel="nofollow" onclick="window.open('<?php echo $slash2 ?>www.facebook.com/sharer/sharer.php?u='+'<?php echo $_product->getProductUrl();?>&picture=<?php echo $_product->getImageUrl();?>');return false;"><em class="fa fa-facebook"><span class="hidden"><?php /* @escapeNotVerified */ echo __('facebook') ?></span></em>
                 </a>
             </li>
             <li class="twitter">
-                <a class="trasition-all social-link twitter" href="#" title="<?php echo __('Share on Twitter') ?>" rel="nofollow" target="_blank" onclick="window.open('<?php echo $slash2 ?>twitter.com/share?text=<?php echo $_product->getName();?>&amp;url=<?php echo $_product->getProductUrl();?>');return false;"><em class="fa fa-twitter"><span class="hidden"><?php echo __('twitter') ?></span></em>
+                <a class="trasition-all social-link twitter" href="#" title="<?php echo __('Share on Twitter') ?>" rel="nofollow" target="_blank" onclick="window.open('<?php echo $slash2 ?>twitter.com/share?text=<?php echo $_product->getName();?>&amp;url=<?php echo $_product->getProductUrl();?>');return false;"><em class="fa fa-twitter"><span class="hidden"><?php /* @escapeNotVerified */ echo __('twitter') ?></span></em>
                 </a>
             </li>
             <li class="pinterest">
-                <a class="trasition-all social-link pinterest" href="#" title="<?php echo __('Pin this') ?>" rel="nofollow" target="_blank" onclick="window.open('<?php echo $slash2 ?>pinterest.com/pin/create/button/?url=<?php echo $_product->getProductUrl();?>&amp;media=http%3A%2F%2Fdemo.cactusthemes.com%2Fnewstube%2Fwp-content%2Fuploads%2F2015%2F06%2F014-Surf-woman.jpg&amp;description=<?php echo $_product->getName();?>');return false;"><em class="fa fa-pinterest"><span class="hidden"><?php  echo __('pinterest') ?></span></em>
+                <a class="trasition-all social-link pinterest" href="#" title="<?php echo __('Pin this') ?>" rel="nofollow" target="_blank" onclick="window.open('<?php echo $slash2 ?>pinterest.com/pin/create/button/?url=<?php echo $_product->getProductUrl();?>&amp;media=http%3A%2F%2Fdemo.cactusthemes.com%2Fnewstube%2Fwp-content%2Fuploads%2F2015%2F06%2F014-Surf-woman.jpg&amp;description=<?php echo $_product->getName();?>');return false;"><em class="fa fa-pinterest"><span class="hidden"><?php /* @escapeNotVerified */ echo __('pinterest') ?></span></em>
                 </a>
             </li>
             <li class="linkedin">
-                <a class="trasition-all social-link linkedin" href="#" title="<?php echo __('Share on LinkedIn') ?>" rel="nofollow" target="_blank" onclick="window.open('<?php echo $slash2 ?>www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $_product->getProductUrl();?>&amp;title=<?php echo $_product->getName();?>');return false;"><em class="fa fa-linkedin"><span class="hidden"><?php  echo __('linkedin') ?></span></em>
+                <a class="trasition-all social-link linkedin" href="#" title="<?php echo __('Share on LinkedIn') ?>" rel="nofollow" target="_blank" onclick="window.open('<?php echo $slash2 ?>www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $_product->getProductUrl();?>&amp;title=<?php echo $_product->getName();?>');return false;"><em class="fa fa-linkedin"><span class="hidden"><?php /* @escapeNotVerified */ echo __('linkedin') ?></span></em>
                 </a>
             </li>
         </ul>
     </div>
-</div>
+</div>-->
 
-<?php */
-
-$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
-$_alobHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
-?>
-<?php
-    $blockTabs     = $_alobHelper->getBlockTab();
-    $attributeTabs = $_alobHelper->getAttributeTab();
-?>
-<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')):?>
-    <div class="product info detailed">
-        <?php $layout = $block->getLayout(); ?>
-        <div class="product data items" data-mage-init='{"tabs":{"openedState":"active"}}'>
-            <?php $content = ''; ?>
-            <div class="items-tabs">
-            <?php foreach ($detailedInfoGroup as $name):?>
-                <?php
-                    $html = $layout->renderElement($name);
-                    if (!trim($html)) {
-                        continue;
-                    }
-                    $alias = $layout->getElementAlias($name);
-                    $label = $block->getChildData($alias, 'title');
-                ?>
-                <div class="data item title"
-                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title"
-                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>">
-                    <a class="data switch"
-                       tabindex="-1"
-                       data-toggle="switch"
-                       href="#<?php /* @escapeNotVerified */ echo $alias; ?>"
-                       id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title">
-                        <?php /* @escapeNotVerified */ echo $label; ?>
-                    </a>
-                </div>
-                <!-- <div class="data item content" id="<?php /* @escapeNotVerified  echo $alias; */ ?>" data-role="content">
-                    <?php /* @escapeNotVerified echo $html; */ ?>
-                </div> -->
-
-                <?php $content .= '<div class="data item content" id="'.$alias.'" data-role="content">'.$html.'</div>' ?>
-            <?php endforeach;?>
-            <?php foreach ($blockTabs as $tab):?>
-                <?php 
-                    if( !isset($tab['enabled'])) {
-                        continue;
-                    }
-                    $alias = $tab['block'];
-                    $html  = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($alias)->toHtml();
-                    if (!trim($html)) {
-                        continue;
-                    }
-                    $label = $tab['title'];
-                ?>
-                <div class="data item title"
-                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title"
-                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>">
-                    <a class="data switch"
-                       tabindex="-1"
-                       data-toggle="switch"
-                       href="#<?php /* @escapeNotVerified */ echo $alias; ?>"
-                       id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title">
-                        <?php /* @escapeNotVerified */ echo $label; ?>
-                    </a>
-                </div>
-                <?php $content .= '<div class="data item content" id="'.$alias.'" data-role="content">'.$html.'</div>' ?>
-            <?php endforeach;?>
-            <?php foreach ($attributeTabs as $tab):?>
-                <?php 
-                    if( !isset($tab['enabled']) ) {
-                        continue;
-                    }
-                    $alias   = $tab['attribute'];
-                    $blockAttribute = $this->getLayout()->createBlock('Magento\Catalog\Block\Product\View\Attributes');
-                    $_product = $blockAttribute->getProduct();
-                    $dataAttribute  = $blockAttribute->getAdditionalData();
-                    $html = '';
-                    if(isset($dataAttribute[$alias])) :
-                        $_data = $dataAttribute[$alias];
-                        $html .= '<table class="data table additional-attributes ' . $_data['code'] . '">';
-                        $html .= '<tbody>';
-                        $html .= '<tr>';
-                        $html .=    '<th class="col label" scope="row">' . $block->escapeHtml($_data['label']) . '</th>';
-                        $html .=    '<td class="col data" data-th="' . $block->escapeHtmlAttr($_data['label']) . '">' . $_helper->productAttribute($_product, $_data['value'], $_data['code']) . '</td>';
-                        $html .= '</tr>';
-                        $html .= '</tbody>';
-                        $html .= '</table>';
-                    else :
-                        $attributeContent  = $this->helper('Magento\Catalog\Helper\Output')->productAttribute($_product, $_product->getData($alias), $alias);
-                        $html .= is_string($attributeContent) ? $attributeContent : __('The attribute %1 not support show on frontend please choose another attribute.', $alias);
-                    endif;
-                    if ( !trim($html)) {
-                        continue;
-                    }
-                    $label = $tab['title'];
-                ?>
-                <div class="data item title"
-                     aria-labeledby="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title"
-                     data-role="collapsible" id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>">
-                    <a class="data switch"
-                       tabindex="-1"
-                       data-toggle="switch"
-                       href="#<?php /* @escapeNotVerified */ echo $alias; ?>"
-                       id="tab-label-<?php /* @escapeNotVerified */ echo $alias;?>-title">
-                        <?php /* @escapeNotVerified */ echo $label; ?>
-                    </a>
-                </div>
-                <?php $content .= '<div class="data item content" id="'.$alias.'" data-role="content">'.$html.'</div>' ?>
-            <?php endforeach;?>
-            </div>
-            <div class="data-tabs-content">
-                <?php echo $content ?>
-            </div>    
-        </div>
-    </div>
-<?php endif; ?>
 
