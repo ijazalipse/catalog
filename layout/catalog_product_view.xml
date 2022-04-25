@@ -15,8 +15,8 @@
 		<move element="alo.product.timer" destination="product.shop.content" before="product.info.mailto"/>
 		<move element="product.info.extrahint" destination="product.shop.content" before="product.info.mailto"/>
 		<move element="product.info" destination="product.shop.content" after="product.info.extrahint"/>
-		<move element="product.info.mailto" destination="product.shop.content" after="-"/>
-                <move element="product.info.detailed" destination="product.shop.content" after="-"/>
+		<move element="product.info.mailto" destination="product.shop.content" after="product.info.mailto"/>
+        <move element="product.info.detailed" destination="product.shop.content" after="-"/>
 		<move element="catalog.product.related" destination="product.related.block"/>
 		<move element="product.info.upsell" destination="product.related.block" after="catalog.product.related"/>		
 		<container name="alo.product.timer" as="alo_product_timer" label="Alo Product Timer"  htmlTag="div" htmlClass="sections-content-timer wrap"/>
